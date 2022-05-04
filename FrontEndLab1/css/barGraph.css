@@ -1,0 +1,70 @@
+html, body {
+    display: grid;
+    height: 100%;
+    place-items: center;
+  }
+  
+  .container {
+    background: #f2f2f2;
+    padding: 20px;
+  }
+  
+  .container h1 {
+    text-align: center;
+  }
+  
+  .barPlot {
+    height: 400px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .bar {
+    display: block;
+    width: 50px;
+  }
+  
+  .bar .info {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .barPlot .bar .progressLine {
+    position: relative;
+    display: block;
+    width: 50%;
+    height: 100%;
+    background: #f2f2f2;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+  }
+  
+  .progressLine span {
+    width: 100%;
+    background: #CAC6C0;
+    position: absolute;
+    bottom: 0;
+  }
+  
+  @keyframes animate {
+    0% {
+      transform: scaleY(0);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
+  
+  .progressLine.progress-30 span {
+    height: 30%;
+  }
+  
+  .progressLine.progress-40 span {
+    height: 40%;
+  }
+  
+  .progressLine.progress-80 span {
+    height: 80%;
+  }
